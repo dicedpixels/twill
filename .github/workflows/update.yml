@@ -29,7 +29,9 @@ jobs:
 
       - name: Run Twill
         working-directory: core
-        run: ./gradlew run --args="${{ inputs.tag }}"
+        run: |
+          chmod +x gradlew
+          ./gradlew run --args="${{ inputs.tag }}"
 
       - name: Commit updated metadata
         run: |
