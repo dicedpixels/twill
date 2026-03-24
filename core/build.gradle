@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'xyz.dicedpixels'
+version = '1.0-SNAPSHOT'
+
+application {
+    mainClass = 'xyz.dicedpixels.Twill'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.eclipse.jgit:org.eclipse.jgit:+")
+    implementation("com.github.javaparser:javaparser-core:+")
+    implementation("org.slf4j:slf4j-api:2.0.+")
+    implementation("com.squareup.moshi:moshi:1.15.+")
+    runtimeOnly("ch.qos.logback:logback-classic:1.5.+")
+}
