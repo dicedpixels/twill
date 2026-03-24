@@ -46,7 +46,7 @@ public class Repository {
     private void clone(String tag) throws GitAPIException {
         logger.info("Cloning '{}' at tag '{}'", FABRIC_API_REPO, tag);
 
-        try (var _ = Git.cloneRepository()
+        try (var git = Git.cloneRepository()
                 .setURI(FABRIC_API_REPO)
                 .setDirectory(directory.toFile())
                 .setBranch("refs/tags/" + tag)
